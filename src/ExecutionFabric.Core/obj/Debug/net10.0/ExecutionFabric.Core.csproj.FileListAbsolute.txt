@@ -1,0 +1,11 @@
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\bin\Debug\net10.0\ExecutionFabric.Core.deps.json
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\bin\Debug\net10.0\ExecutionFabric.Core.dll
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\bin\Debug\net10.0\ExecutionFabric.Core.pdb
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ExecutionFabric.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ExecutionFabric.Core.AssemblyInfoInputs.cache
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ExecutionFabric.Core.AssemblyInfo.cs
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ExecutionFabric.Core.csproj.CoreCompileInputs.cache
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ExecutionFabric.Core.dll
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\refint\ExecutionFabric.Core.dll
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ExecutionFabric.Core.pdb
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Core\obj\Debug\net10.0\ref\ExecutionFabric.Core.dll

@@ -1,0 +1,11 @@
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\bin\Debug\net10.0\ExecutionFabric.Abstractions.deps.json
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\bin\Debug\net10.0\ExecutionFabric.Abstractions.dll
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\bin\Debug\net10.0\ExecutionFabric.Abstractions.pdb
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ExecutionFabric.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ExecutionFabric.Abstractions.AssemblyInfoInputs.cache
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ExecutionFabric.Abstractions.AssemblyInfo.cs
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ExecutionFabric.Abstractions.csproj.CoreCompileInputs.cache
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ExecutionFabric.Abstractions.dll
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\refint\ExecutionFabric.Abstractions.dll
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ExecutionFabric.Abstractions.pdb
+D:\Pratham\Coding\execution-fabric\src\ExecutionFabric.Abstractions\obj\Debug\net10.0\ref\ExecutionFabric.Abstractions.dll

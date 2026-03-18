@@ -1,221 +1,114 @@
-Execution Fabric
-Vision
+# Execution Fabric
 
-Execution Fabric is a low-level execution runtime designed to orchestrate and execute tasks across different execution environments.
+> A general-purpose execution runtime for heterogeneous task environments.
 
-The system is intended to evolve iteratively from simple to complex, allowing a single developer to gradually build powerful infrastructure in small, manageable steps.
+---
 
-The goal is to create a general-purpose execution layer that can support:
+## What is Execution Fabric?
 
-AI systems
+Execution Fabric is a low-level execution runtime.
 
-workflow engines
+Its purpose is to provide a single, unified system for running tasks — regardless of what those tasks are or where they run.
 
-distributed compute systems
+Modern software systems execute many types of work: local functions, API calls, shell commands, AI tool invocations, distributed jobs, workflow steps. Yet execution logic is almost always fragmented — spread across frameworks, ad-hoc runners, and application-specific glue code.
 
-tool orchestration
+Execution Fabric explores a different model: one runtime, one abstraction, all execution types.
 
-intelligent agents
+---
 
-application pipelines
+## Core Model
 
-Execution Fabric focuses on execution infrastructure rather than AI frameworks.
-AI systems are treated as integrations or executors, not core dependencies.
+```
+Task → Executor → Result
+```
 
-Architecture Overview
+| Primitive          | Responsibility                                      |
+|--------------------|-----------------------------------------------------|
+| `ITask`            | Describes what work should be done                  |
+| `IExecutor`        | Knows how to perform a specific category of work    |
+| `ExecutionEngine`  | Coordinates dispatch, lifecycle, and result routing |
+| `ExecutionResult`  | Uniform output shape — errors are data, not throws  |
 
-Execution Fabric acts as the orchestration and execution layer responsible for determining:
+The runtime separates **execution** from **orchestration**. Higher-level concerns — workflows, scheduling, agents — build on top of it.
 
-what should run
+---
 
-when it should run
+## Why
 
-where it should run
+Most systems conflate execution with the thing being executed.
 
-how it should run
+Workflow engines carry their own runners. AI frameworks implement custom tool dispatch. Distributed systems build isolated execution layers. The result is fragmentation: each system reinvents execution for its own context.
 
-Execution is performed through a system of executors.
+Execution Fabric isolates the execution layer as infrastructure — something that can be reasoned about, extended, and composed independently of what runs on top of it.
 
-System Flow
+---
 
-Application
-→ Execution Fabric
-→ Executor Layer
-→ Execution Targets
+## Executor Model
 
-Execution targets may include:
+Executors are domain-scoped execution units. Each executor handles one category of work.
 
-local code execution
+```
+LocalFunctionExecutor   →  in-process function calls
+ShellExecutor           →  shell / CLI commands
+HttpExecutor            →  REST and API calls
+WorkflowExecutor        →  composed execution graphs
+DistributedExecutor     →  remote worker dispatch
+OpenAIExecutor          →  LLM tool invocations
+SemanticKernelExecutor  →  SK-based agent tooling
+DockerExecutor          →  containerized workloads
+```
 
-APIs or services
+New executors plug into the runtime without modifying the core.
 
-distributed workers
+External systems — including AI frameworks — are treated as **execution targets**, not core dependencies.
 
-workflow nodes
+---
 
-AI model runtimes
+## Roadmap
 
-Layer Responsibilities
+Execution Fabric is designed to evolve incrementally.
 
-Application
+**Phase 1 — Local Execution Runtime**
+Minimal runtime: `ITask`, `IExecutor`, `ExecutionResult`, `ExecutionEngine`. Everything executes locally.
 
-Defines execution requests.
+**Phase 2 — Executor Plugin System**
+Executor registry, plugin discovery, dependency injection support, dynamic routing.
 
-Execution Fabric
+**Phase 3 — Distributed Execution**
+Remote executors, worker nodes, message-based task distribution, execution coordination across machines.
 
-Handles routing, orchestration, and execution policies.
+**Phase 4 — Workflow / DAG Execution**
+Execution graphs, dependency resolution, parallel execution, DAG-based pipelines.
 
-Executors
+**Phase 5 — LLM / Agent Integration**
+LLM executors, tool execution, agent pipelines, semantic workflows. AI systems as execution targets.
 
-Perform execution within specific domains.
+---
 
-Execution Targets
+## Design Principles
 
-Represent the actual compute systems where work is performed.
+- **Execution separated from orchestration** — the runtime coordinates; it does not decide what runs
+- **Errors are data** — executors return results, they do not throw
+- **Extensibility by design** — new executors plug in without touching the core
+- **Incremental complexity** — the system grows in layers; each phase builds on the last
+- **Observable** — tracing and logging are first-class concerns, not afterthoughts
 
-Executor Examples
+---
 
-Executors provide domain-specific execution capabilities.
+## Status
 
-Examples include:
+Early development. Currently in **Phase 1**.
 
-LocalCodeExecutor
+Stack: C# / .NET
 
-HttpExecutor
+---
 
-WorkflowExecutor
+## Contributing
 
-DistributedExecutor
+This project is in active early design. Contributions, ideas, and feedback are welcome.
 
-OpenAIExecutor
+---
 
-SemanticKernelExecutor
+## License
 
-External frameworks such as Semantic Kernel are treated as execution integrations rather than core infrastructure.
-
-Core Runtime Primitives
-
-The minimal runtime consists of four core primitives:
-
-ExecutionContext
-
-Represents the execution environment and input data.
-
-ExecutionResult
-
-Represents the result or outcome of execution.
-
-IExecutor
-
-Defines the contract for any component capable of executing work.
-
-ExecutionEngine
-
-The core runtime responsible for triggering executors.
-
-Development Philosophy
-
-Execution Fabric is designed for incremental development.
-
-Principles:
-
-Build minimal systems first
-
-Add capabilities gradually
-
-Maintain clear abstraction boundaries
-
-Avoid unnecessary complexity
-
-Keep the core runtime lightweight
-
-Evolution Roadmap
-
-Execution Fabric evolves through several phases.
-
-Phase 1 — Local Execution Engine
-
-Goal:
-
-Build a minimal runtime capable of executing tasks locally.
-
-Features:
-
-ExecutionContext
-
-ExecutionResult
-
-IExecutor
-
-ExecutionEngine
-
-Phase 2 — Plugin / Executor System
-
-Goal:
-
-Enable extensibility through dynamically registered executors.
-
-Features:
-
-executor registry
-
-plugin discovery
-
-dependency injection support
-
-executor routing
-
-Phase 3 — Distributed Execution
-
-Goal:
-
-Enable execution across multiple machines or services.
-
-Features:
-
-remote executors
-
-worker nodes
-
-message-based task distribution
-
-execution coordination
-
-Phase 4 — Workflow / DAG Execution
-
-Goal:
-
-Support complex execution pipelines.
-
-Features:
-
-execution graphs
-
-dependency resolution
-
-DAG-based workflows
-
-parallel execution
-
-Phase 5 — LLM / Tool / Agent Integrations
-
-Goal:
-
-Integrate intelligent systems into the execution runtime.
-
-Features:
-
-LLM executors
-
-tool execution
-
-agent pipelines
-
-semantic workflows
-
-AI systems are treated as execution targets rather than core infrastructure.
-
-Long-Term Goal
-
-Execution Fabric aims to become a lightweight execution runtime for intelligent and distributed systems.
-The objective is to provide a unified abstraction layer for orchestrating complex execution environments.
+MIT

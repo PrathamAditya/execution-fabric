@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Pratham\\Coding\\execution-fabric\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6594C302-2A41-D34A-5C7C-D1F22E71E43E}|src\\ExecutionFabric.Abstractions\\ExecutionFabric.Abstractions.csproj|d:\\pratham\\coding\\execution-fabric\\src\\executionfabric.abstractions\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6594C302-2A41-D34A-5C7C-D1F22E71E43E}|src\\ExecutionFabric.Abstractions\\ExecutionFabric.Abstractions.csproj|solutionrelative:src\\executionfabric.abstractions\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\Pratham\\Coding\\execution-fabric\\src\\ExecutionFabric.Abstractions\\Class1.cs",
+              "RelativeDocumentMoniker": "src\\ExecutionFabric.Abstractions\\Class1.cs",
+              "ToolTip": "D:\\Pratham\\Coding\\execution-fabric\\src\\ExecutionFabric.Abstractions\\Class1.cs",
+              "RelativeToolTip": "src\\ExecutionFabric.Abstractions\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T12:29:00.773Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

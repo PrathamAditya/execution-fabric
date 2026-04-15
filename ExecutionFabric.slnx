@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/src/">
+    <File Path=".gitignore" />
+    <Project Path="ConsoleTestApp/ConsoleTestApp.csproj" Id="2d5263a9-2c56-4504-a0f7-ce558b29c227" />
     <Project Path="src/ExecutionFabric.Abstractions/ExecutionFabric.Abstractions.csproj" />
     <Project Path="src/ExecutionFabric.Core/ExecutionFabric.Core.csproj" />
   </Folder>

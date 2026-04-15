@@ -1,0 +1,29 @@
+# Build folders
+bin/
+obj/
+
+# Visual Studio folder
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# VS cache / DB files
+*.db
+*.cache
+*.cachefile
+*.dbcache
+*.opendb
+
+# Build outputs
+*.dll
+*.exe
+*.pdb
+
+# .NET runtime files
+*.deps.json
+*.runtimeconfig.json
+
+# Logs
+*.log

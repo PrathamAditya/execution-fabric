@@ -14,9 +14,12 @@ namespace ExecutionFabric.Core
                 case "local":
                     Console.WriteLine($"[{executionContext.CorrelationId}]: Routing to local");
                     return new LocalExecutor();
+                case "http":
+                    Console.WriteLine($"[{executionContext.CorrelationId}]: Routing to local");
+                    return new LocalExecutor();
                 default:
                     Console.WriteLine($"Unknown execution type. Defaulting to local execution with CorrelationId: {executionContext.CorrelationId}");
-                    IExecutor defaultExecutor = new DefaultExecutor();
+                    IExecutor defaultExecutor = new MockExecutor();
                     return defaultExecutor;
             }
         }

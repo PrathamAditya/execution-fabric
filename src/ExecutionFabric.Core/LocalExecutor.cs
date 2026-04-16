@@ -16,7 +16,7 @@ namespace ExecutionFabric.Core
             {
                 Console.WriteLine($"[{executionContext.CorrelationId}]: Executing");
 
-                var result = executionUnit.Execute(executionContext);
+                 var result = executionUnit.Execute(executionContext);
 
                 Console.WriteLine($"[{executionContext.CorrelationId}]: END");
 

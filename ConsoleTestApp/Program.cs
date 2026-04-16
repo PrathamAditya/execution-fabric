@@ -30,6 +30,19 @@ namespace ConsoleTestApp
                 Console.WriteLine(executionResult.responseMessage);
                 
             }
+
+            static void Iteration2Test2()
+            {
+                IExecutionUnit printMessageUnit = new PrintMessageUnit();
+                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+
+                var router = new Router();
+                IExecutor executor = router.Route(printMessageUnit, executionContext);
+                var executionResult = executor.Execute(printMessageUnit, executionContext);
+                Console.WriteLine(executionResult.success);
+                Console.WriteLine(executionResult.responseMessage);
+
+            }
             //Iteration1Test();
             Iteration2Test();
         }

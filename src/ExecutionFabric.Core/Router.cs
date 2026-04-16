@@ -7,7 +7,7 @@ namespace ExecutionFabric.Core
 {
     public class Router
     {
-        public IExecutor Route(IExecutionUnit executionUnit, Abstractions.ExecutionContext executionContext)
+        public IExecutor Route(Abstractions.ExecutionContext executionContext)
         {
             switch (executionContext.ExecutionType)
             {
@@ -15,8 +15,8 @@ namespace ExecutionFabric.Core
                     Console.WriteLine($"[{executionContext.CorrelationId}]: Routing to local");
                     return new LocalExecutor();
                 case "http":
-                    Console.WriteLine($"[{executionContext.CorrelationId}]: Routing to local");
-                    return new LocalExecutor();
+                    Console.WriteLine($"[{executionContext.CorrelationId}]: Routing to http");
+                    return new HttpExecutor();
                 default:
                     Console.WriteLine($"Unknown execution type. Defaulting to local execution with CorrelationId: {executionContext.CorrelationId}");
                     IExecutor defaultExecutor = new MockExecutor();

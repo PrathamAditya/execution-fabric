@@ -15,10 +15,12 @@ namespace ExecutionFabric.Core
             try
             {
                 Console.WriteLine($"[{executionContext.CorrelationId}]: Executing");
-                Console.WriteLine($"[{executionContext.CorrelationId}]: Printing message from the Mock execution.");
+
+                var result = executionUnit.Execute(executionContext);
+
                 Console.WriteLine($"[{executionContext.CorrelationId}]: END");
 
-                return new ExecutionResult(); ;
+                return result;
             }
             catch (Exception ex)
             {

@@ -4,8 +4,10 @@ using System.Text;
 
 namespace ExecutionFabric.Abstractions
 {
+   
     public class ExecutionContext
     {
-
+        public Guid CorrelationId = Guid.NewGuid();
+        public string ExecutionType = "local";
     }
 }

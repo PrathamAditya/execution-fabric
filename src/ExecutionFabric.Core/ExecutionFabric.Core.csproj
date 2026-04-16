@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ExecutionFabric.Abstractions\ExecutionFabric.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

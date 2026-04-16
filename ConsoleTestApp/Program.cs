@@ -7,15 +7,44 @@ namespace ConsoleTestApp
     {
         static void Main(string[] args)
         {
-            var _ = new DefaultExecutor();
+            static void Iteration1Test()
+            {
+                var _ = new DefaultExecutor();
+                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+                executionContext.ExecutionType = "local";
+                PrintMessageUnit printMessageUnit = new PrintMessageUnit();
+                var result = _.Execute(printMessageUnit, executionContext);
+                Console.WriteLine(result.responseMessage);
+                Console.WriteLine(result.success);
+            }
 
-            ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
-            executionContext.ExecutionType = "local";
+            static void Iteration2Test()
+            {
+                IExecutionUnit printMessageUnit = new PrintMessageUnit();
+                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
 
-            PrintMessageUnit printMessageUnit = new PrintMessageUnit();
-            var result = _.Execute(printMessageUnit, executionContext);
-            Console.WriteLine(result.responseMessage);
-            Console.WriteLine(result.success);
+                var router = new Router();
+                IExecutor executor = router.Route(printMessageUnit, executionContext);
+                var executionResult = executor.Execute(printMessageUnit, executionContext);
+                Console.WriteLine(executionResult.success);
+                Console.WriteLine(executionResult.responseMessage);
+                
+            }
+
+            static void Iteration2Test2()
+            {
+                IExecutionUnit printMessageUnit = new PrintMessageUnit();
+                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+
+                var router = new Router();
+                IExecutor executor = router.Route(printMessageUnit, executionContext);
+                var executionResult = executor.Execute(printMessageUnit, executionContext);
+                Console.WriteLine(executionResult.success);
+                Console.WriteLine(executionResult.responseMessage);
+
+            }
+            //Iteration1Test();
+            Iteration2Test();
         }
     }
 }

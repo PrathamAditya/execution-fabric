@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using ExecutionContext = ExecutionFabric.Abstractions.ExecutionContext;
 
-namespace ExecutionFabric.Core
+namespace ExecutionFabric.Core.Executors
 {
     internal class LocalExecutor: IExecutor
     {

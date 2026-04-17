@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ExecutionFabric.Abstractions;
 
-namespace ExecutionFabric.Core
+namespace ExecutionFabric.Core.Executors
 {
     public class DefaultExecutor: IExecutor
     {

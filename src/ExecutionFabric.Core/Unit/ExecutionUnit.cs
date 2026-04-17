@@ -1,6 +1,6 @@
 ﻿using ExecutionFabric.Abstractions;
 
-namespace ExecutionFabric.Core;
+namespace ExecutionFabric.Core.Unit;
 
 public class ExecutionUnit : IExecutionUnit
 {

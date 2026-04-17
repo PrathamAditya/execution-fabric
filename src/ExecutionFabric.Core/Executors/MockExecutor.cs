@@ -1,9 +1,12 @@
 ﻿using ExecutionFabric.Abstractions;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using ExecutionContext = ExecutionFabric.Abstractions.ExecutionContext;
 
-namespace ExecutionFabric.Core
+namespace ExecutionFabric.Core.Executors
 {
-    public class HttpExecutor : IExecutor
+    internal class MockExecutor: IExecutor
     {
         public ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
         {
@@ -11,24 +14,13 @@ namespace ExecutionFabric.Core
 
             try
             {
-                Console.WriteLine($"[{executionContext.CorrelationId}]: Executing HTTP request");
+                Console.WriteLine($"[{executionContext.CorrelationId}]: Executing");
 
-                if (executionUnit is ExecutionUnit messageUnit)
-                {
-                    Console.WriteLine($"[{executionContext.CorrelationId}]: Sending HTTP request with payload: {messageUnit.Message}");
-                }
-                else
-                {
-                    Console.WriteLine($"[{executionContext.CorrelationId}]: Unknown unit type for HTTP execution");
-                }
+                var result = executionUnit.Execute(executionContext);
 
                 Console.WriteLine($"[{executionContext.CorrelationId}]: END");
 
-                return new ExecutionResult
-                {
-                    success = true,
-                    responseMessage = "HTTP request simulated successfully"
-                };
+                return result;
             }
             catch (Exception ex)
             {

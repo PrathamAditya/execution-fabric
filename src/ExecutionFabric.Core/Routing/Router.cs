@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ExecutionFabric.Core
+namespace ExecutionFabric.Core.Routing
 {
     public class Router
     {

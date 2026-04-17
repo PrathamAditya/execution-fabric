@@ -9,10 +9,10 @@ namespace ExecutionFabric.Core.Runtime
 {
     public class ExecutionRuntime
     {
-        public static ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
+        public static async Task<ExecutionResult> Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
         {
             Router router = new Router();
-            ExecutionResult  executionResult =  router.Route(executionContext).Execute(executionUnit, executionContext);
+            ExecutionResult  executionResult =  await router.Route(executionContext).Execute(executionUnit, executionContext);
             return executionResult;
         }
     }

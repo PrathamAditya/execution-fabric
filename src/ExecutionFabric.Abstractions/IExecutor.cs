@@ -6,6 +6,6 @@ namespace ExecutionFabric.Abstractions
 {
     public interface IExecutor
     {
-        ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext);
+        Task<ExecutionResult> Execute(IExecutionUnit executionUnit, ExecutionContext executionContext);
     }
 }

@@ -8,7 +8,7 @@ namespace ExecutionFabric.Core.Executors
 {
     internal class MockExecutor: IExecutor
     {
-        public ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
+        public async Task<ExecutionResult> Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
         {
             Console.WriteLine($"[{executionContext.CorrelationId}]: START");
 

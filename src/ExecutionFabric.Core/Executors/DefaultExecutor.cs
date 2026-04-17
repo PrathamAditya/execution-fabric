@@ -7,7 +7,7 @@ namespace ExecutionFabric.Core.Executors
 {
     public class DefaultExecutor: IExecutor
     {
-        public ExecutionResult Execute(IExecutionUnit executionUnit, Abstractions.ExecutionContext executionContext)
+        public async Task<ExecutionResult> Execute(IExecutionUnit executionUnit, Abstractions.ExecutionContext executionContext)
         {
             //ExecutionResult result = new ExecutionResult();
             //switch (executionContext.ExecutionType)

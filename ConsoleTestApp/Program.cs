@@ -7,62 +7,60 @@ namespace ConsoleTestApp
     {
         static void Main(string[] args)
         {
-            static void Iteration1Test()
-            {
-                var _ = new DefaultExecutor();
-                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
-                executionContext.ExecutionType = "local";
-                ExecutionUnit printMessageUnit = new ExecutionUnit();
-                var result = _.Execute(printMessageUnit, executionContext);
-                Console.WriteLine(result.responseMessage);
-                Console.WriteLine(result.success);
-            }
+            //static void Iteration1Test()
+            //{
+            //    var _ = new DefaultExecutor();
+            //    ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+            //    executionContext.ExecutionType = "local";
+            //    //ExecutionUnit printMessageUnit = new ExecutionUnit();
+            //    var result = _.Execute(printMessageUnit, executionContext);
+            //    Console.WriteLine(result.responseMessage);
+            //    Console.WriteLine(result.success);
+            //}
 
-            static void Iteration2Test()
-            {
-                IExecutionUnit printMessageUnit = new ExecutionUnit();
-                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+            //static void Iteration2Test()
+            //{
+            //    IExecutionUnit printMessageUnit = new ExecutionUnit();
+            //    ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
 
-                var router = new Router();
-                IExecutor executor = router.Route(executionContext);
-                var executionResult = executor.Execute(printMessageUnit, executionContext);
-                Console.WriteLine(executionResult.success);
-                Console.WriteLine(executionResult.responseMessage);
+            //    var router = new Router();
+            //    IExecutor executor = router.Route(executionContext);
+            //    var executionResult = executor.Execute(printMessageUnit, executionContext);
+            //    Console.WriteLine(executionResult.success);
+            //    Console.WriteLine(executionResult.responseMessage);
                 
-            }
+            //}
 
-            static void Iteration2Test2()
-            {
-                IExecutionUnit printMessageUnit = new ExecutionUnit();
-                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+            //static void Iteration2Test2()
+            //{
+            //    IExecutionUnit printMessageUnit = new ExecutionUnit();
+            //    ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
 
-                var router = new Router();
-                IExecutor executor = router.Route(executionContext);
-                var executionResult = executor.Execute(printMessageUnit, executionContext);
-                Console.WriteLine(executionResult.success);
-                Console.WriteLine(executionResult.responseMessage);
+            //    var router = new Router();
+            //    IExecutor executor = router.Route(executionContext);
+            //    var executionResult = executor.Execute(printMessageUnit, executionContext);
+            //    Console.WriteLine(executionResult.success);
+            //    Console.WriteLine(executionResult.responseMessage);
 
-            }
-            //Iteration1Test();
+            //}
+            // Iteration1Test();
 
             static void Iteration3Test1()
             {
-                ExecutionRuntime runtime = new ExecutionRuntime();
-                IExecutionUnit executionUnit = new ExecutionUnit();
+                IExecutionUnit executionUnit = new ExecutionUnit("Hello");
                 ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
 
-
-                var executionResult = runtime.Execute(executionUnit, executionContext);
+                var executionResult = ExecutionRuntime.Execute(executionUnit, executionContext);
                 Console.WriteLine(executionResult.success);
                 Console.WriteLine(executionResult.responseMessage);
 
                 executionContext.ExecutionType = "local";
-                var executionResult2 = runtime.Execute(executionUnit, executionContext);
+                var executionResult2 = ExecutionRuntime.Execute(executionUnit, executionContext);
                 Console.WriteLine(executionResult2.success);
                 Console.WriteLine(executionResult2.responseMessage);
 
                 executionContext.ExecutionType = "http";
-                var executionResult3 = runtime.Execute(executionUnit, executionContext);
+                var executionResult3 = ExecutionRuntime.Execute(executionUnit, executionContext);
                 Console.WriteLine(executionResult3.success);
                 Console.WriteLine(executionResult3.responseMessage);
 

@@ -8,7 +8,7 @@ namespace ExecutionFabric.Core
 {
     public class ExecutionRuntime
     {
-        public ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
+        public static ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
         {
             Router router = new Router();
             ExecutionResult  executionResult =  router.Route(executionContext).Execute(executionUnit, executionContext);

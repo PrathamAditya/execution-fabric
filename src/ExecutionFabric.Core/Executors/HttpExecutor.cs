@@ -6,7 +6,7 @@ namespace ExecutionFabric.Core.Executors
 {
     public class HttpExecutor : IExecutor
     {
-        public ExecutionResult Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
+        public async Task<ExecutionResult> Execute(IExecutionUnit executionUnit, ExecutionContext executionContext)
         {
             Console.WriteLine($"[{executionContext.CorrelationId}]: START");
 

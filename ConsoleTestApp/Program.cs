@@ -7,7 +7,7 @@ namespace ConsoleTestApp
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //static void Iteration1Test()
             //{
@@ -49,22 +49,22 @@ namespace ConsoleTestApp
 
             static void Iteration3Test1()
             {
-                IExecutionUnit executionUnit = new ExecutionUnit("Hello");
-                ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+                //IExecutionUnit executionUnit = new ExecutionUnit("Hello");
+                //ExecutionFabric.Abstractions.ExecutionContext executionContext = new ExecutionFabric.Abstractions.ExecutionContext();
 
-                var executionResult = ExecutionRuntime.Execute(executionUnit, executionContext);
-                Console.WriteLine(executionResult.success);
-                Console.WriteLine(executionResult.responseMessage);
+                //var executionResult = ExecutionRuntime.Execute(executionUnit, executionContext);
+                //Console.WriteLine(executionResult.success);
+                //Console.WriteLine(executionResult.responseMessage);
 
-                executionContext.ExecutionType = "local";
-                var executionResult2 = ExecutionRuntime.Execute(executionUnit, executionContext);
-                Console.WriteLine(executionResult2.success);
-                Console.WriteLine(executionResult2.responseMessage);
+                //executionContext.ExecutionType = "local";
+                //var executionResult2 = ExecutionRuntime.Execute(executionUnit, executionContext);
+                //Console.WriteLine(executionResult2.success);
+                //Console.WriteLine(executionResult2.responseMessage);
 
-                executionContext.ExecutionType = "http";
-                var executionResult3 = ExecutionRuntime.Execute(executionUnit, executionContext);
-                Console.WriteLine(executionResult3.success);
-                Console.WriteLine(executionResult3.responseMessage);
+                //executionContext.ExecutionType = "http";
+                //var executionResult3 = ExecutionRuntime.Execute(executionUnit, executionContext);
+                //Console.WriteLine(executionResult3.success);
+                //Console.WriteLine(executionResult3.responseMessage);
 
                 //IExecutionUnit printMessageUnit = new PrintMessageUnit();
                 //ExecutionFabric.Abstractions.ExecutionContext executionPrintContext = new ExecutionFabric.Abstractions.ExecutionContext();
@@ -80,16 +80,26 @@ namespace ConsoleTestApp
 
 
 
-                //var executionResult2 = runtime.Execute(executionUnit, executionDefaultContext);
-                //Console.WriteLine(executionResult2.success);
-                //Console.WriteLine(executionResult2.responseMessage);
+                // var executionResult2 = runtime.Execute(executionUnit, executionDefaultContext);
+                // Console.WriteLine(executionResult2.success);
+                // Console.WriteLine(executionResult2.responseMessage);
 
-                //var executionResult3 = runtime.Execute(httpExecutionUnit, executionHttpContext);
-                //Console.WriteLine(executionResult3.success);
-                //Console.WriteLine(executionResult3.responseMessage);
+                // var executionResult3 = runtime.Execute(httpExecutionUnit, executionHttpContext);
+                // Console.WriteLine(executionResult3.success);
+                // Console.WriteLine(executionResult3.responseMessage);
             }
 
-            Iteration3Test1();
+            static async Task TestSemanticKernelExecution()
+            {
+                IExecutionUnit aiUnit = new AITextUnit("What is the meaning of life?");
+                ExecutionFabric.Abstractions.ExecutionContext aiExecutionContext = new ExecutionFabric.Abstractions.ExecutionContext();
+                aiExecutionContext.ExecutionType = "ai";
+                var executionResult = await ExecutionRuntime.Execute(aiUnit, aiExecutionContext);
+                Console.WriteLine(executionResult.success);
+                Console.WriteLine(executionResult.responseMessage);
+            }
+
+            await TestSemanticKernelExecution();
         }
     }
 }

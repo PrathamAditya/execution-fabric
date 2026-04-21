@@ -1,7 +1,7 @@
 ﻿using ExecutionFabric.Abstractions;
 using ExecutionFabric.Core;
 using ExecutionFabric.Core.Runtime;
-using ExecutionFabric.Core.Unit;
+using LLMCall;
 
 namespace ConsoleTestApp
 {
@@ -99,7 +99,12 @@ namespace ConsoleTestApp
                 Console.WriteLine(executionResult.responseMessage);
             }
 
-            await TestSemanticKernelExecution();
+            void TestToolCalling()
+            {
+                CallGemini.Main().Wait();
+            }
+
+            TestToolCalling();
         }
     }
 }

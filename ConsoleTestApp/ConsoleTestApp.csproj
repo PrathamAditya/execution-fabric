@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LLMCall\LLMCall.csproj" />
     <ProjectReference Include="..\src\ExecutionFabric.Abstractions\ExecutionFabric.Abstractions.csproj" />
     <ProjectReference Include="..\src\ExecutionFabric.Core\ExecutionFabric.Core.csproj" />
   </ItemGroup>

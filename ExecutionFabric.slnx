@@ -2,7 +2,9 @@
   <Folder Name="/src/">
     <File Path=".gitignore" />
     <Project Path="ConsoleTestApp/ConsoleTestApp.csproj" Id="2d5263a9-2c56-4504-a0f7-ce558b29c227" />
+    <Project Path="LLMCall/LLMCall.csproj" Id="e24a36d0-0ef6-416c-8d81-d694e2466514" />
     <Project Path="src/ExecutionFabric.Abstractions/ExecutionFabric.Abstractions.csproj" />
     <Project Path="src/ExecutionFabric.Core/ExecutionFabric.Core.csproj" />
+    <Project Path="Tools/Tools.csproj" Id="392140ea-db68-496f-b7c4-0e32f11a0aaa" />
   </Folder>
 </Solution>
